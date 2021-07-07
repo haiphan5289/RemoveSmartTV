@@ -1,0 +1,442 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		466AD66A983A573C5047F6DA /* Pods_RemoveSmartTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 053245E32542D7F7886E7BFA /* Pods_RemoveSmartTV.framework */; };
+		93BDCC1C2695F73400FC1D5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCC1B2695F73400FC1D5C /* AppDelegate.swift */; };
+		93BDCC1E2695F73400FC1D5C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCC1D2695F73400FC1D5C /* SceneDelegate.swift */; };
+		93BDCC202695F73400FC1D5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCC1F2695F73400FC1D5C /* ViewController.swift */; };
+		93BDCC232695F73400FC1D5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93BDCC212695F73400FC1D5C /* Main.storyboard */; };
+		93BDCC252695F73700FC1D5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93BDCC242695F73700FC1D5C /* Assets.xcassets */; };
+		93BDCC282695F73700FC1D5C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93BDCC262695F73700FC1D5C /* LaunchScreen.storyboard */; };
+		93BDCC312695F81400FC1D5C /* TahLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCC302695F81400FC1D5C /* TahLibrary.swift */; };
+		93BDCC342696038100FC1D5C /* PropertyWapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCC332696038100FC1D5C /* PropertyWapper.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		053245E32542D7F7886E7BFA /* Pods_RemoveSmartTV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RemoveSmartTV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FC2867FA96AD987083F0DFE /* Pods-RemoveSmartTV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemoveSmartTV.release.xcconfig"; path = "Target Support Files/Pods-RemoveSmartTV/Pods-RemoveSmartTV.release.xcconfig"; sourceTree = "<group>"; };
+		93BDCC182695F73400FC1D5C /* RemoveSmartTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemoveSmartTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		93BDCC1B2695F73400FC1D5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		93BDCC1D2695F73400FC1D5C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		93BDCC1F2695F73400FC1D5C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		93BDCC222695F73400FC1D5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		93BDCC242695F73700FC1D5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		93BDCC272695F73700FC1D5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		93BDCC292695F73700FC1D5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93BDCC302695F81400FC1D5C /* TahLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TahLibrary.swift; sourceTree = "<group>"; };
+		93BDCC332696038100FC1D5C /* PropertyWapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyWapper.swift; sourceTree = "<group>"; };
+		A8682B536FDEE34D6C05BB11 /* Pods-RemoveSmartTV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemoveSmartTV.debug.xcconfig"; path = "Target Support Files/Pods-RemoveSmartTV/Pods-RemoveSmartTV.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		93BDCC152695F73400FC1D5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				466AD66A983A573C5047F6DA /* Pods_RemoveSmartTV.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		07F4518E19211E291213FD3D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A8682B536FDEE34D6C05BB11 /* Pods-RemoveSmartTV.debug.xcconfig */,
+				8FC2867FA96AD987083F0DFE /* Pods-RemoveSmartTV.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		60BB58F5EE2D883298E974FB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				053245E32542D7F7886E7BFA /* Pods_RemoveSmartTV.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		93BDCC0F2695F73400FC1D5C = {
+			isa = PBXGroup;
+			children = (
+				93BDCC1A2695F73400FC1D5C /* RemoveSmartTV */,
+				93BDCC192695F73400FC1D5C /* Products */,
+				07F4518E19211E291213FD3D /* Pods */,
+				60BB58F5EE2D883298E974FB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		93BDCC192695F73400FC1D5C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				93BDCC182695F73400FC1D5C /* RemoveSmartTV.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		93BDCC1A2695F73400FC1D5C /* RemoveSmartTV */ = {
+			isa = PBXGroup;
+			children = (
+				93BDCC322696036900FC1D5C /* Extension */,
+				93BDCC2F2695F7FF00FC1D5C /* Tah Library */,
+				93BDCC1B2695F73400FC1D5C /* AppDelegate.swift */,
+				93BDCC1D2695F73400FC1D5C /* SceneDelegate.swift */,
+				93BDCC1F2695F73400FC1D5C /* ViewController.swift */,
+				93BDCC212695F73400FC1D5C /* Main.storyboard */,
+				93BDCC242695F73700FC1D5C /* Assets.xcassets */,
+				93BDCC262695F73700FC1D5C /* LaunchScreen.storyboard */,
+				93BDCC292695F73700FC1D5C /* Info.plist */,
+			);
+			path = RemoveSmartTV;
+			sourceTree = "<group>";
+		};
+		93BDCC2F2695F7FF00FC1D5C /* Tah Library */ = {
+			isa = PBXGroup;
+			children = (
+				93BDCC302695F81400FC1D5C /* TahLibrary.swift */,
+			);
+			path = "Tah Library";
+			sourceTree = "<group>";
+		};
+		93BDCC322696036900FC1D5C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				93BDCC332696038100FC1D5C /* PropertyWapper.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		93BDCC172695F73400FC1D5C /* RemoveSmartTV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93BDCC2C2695F73700FC1D5C /* Build configuration list for PBXNativeTarget "RemoveSmartTV" */;
+			buildPhases = (
+				6608895DE0770401DD8860E0 /* [CP] Check Pods Manifest.lock */,
+				93BDCC142695F73400FC1D5C /* Sources */,
+				93BDCC152695F73400FC1D5C /* Frameworks */,
+				93BDCC162695F73400FC1D5C /* Resources */,
+				41036007B14055B13CBC2750 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RemoveSmartTV;
+			productName = RemoveSmartTV;
+			productReference = 93BDCC182695F73400FC1D5C /* RemoveSmartTV.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		93BDCC102695F73400FC1D5C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					93BDCC172695F73400FC1D5C = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+				};
+			};
+			buildConfigurationList = 93BDCC132695F73400FC1D5C /* Build configuration list for PBXProject "RemoveSmartTV" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 93BDCC0F2695F73400FC1D5C;
+			productRefGroup = 93BDCC192695F73400FC1D5C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				93BDCC172695F73400FC1D5C /* RemoveSmartTV */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		93BDCC162695F73400FC1D5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93BDCC282695F73700FC1D5C /* LaunchScreen.storyboard in Resources */,
+				93BDCC252695F73700FC1D5C /* Assets.xcassets in Resources */,
+				93BDCC232695F73400FC1D5C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		41036007B14055B13CBC2750 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RemoveSmartTV/Pods-RemoveSmartTV-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RemoveSmartTV/Pods-RemoveSmartTV-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RemoveSmartTV/Pods-RemoveSmartTV-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6608895DE0770401DD8860E0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RemoveSmartTV-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		93BDCC142695F73400FC1D5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93BDCC202695F73400FC1D5C /* ViewController.swift in Sources */,
+				93BDCC342696038100FC1D5C /* PropertyWapper.swift in Sources */,
+				93BDCC312695F81400FC1D5C /* TahLibrary.swift in Sources */,
+				93BDCC1C2695F73400FC1D5C /* AppDelegate.swift in Sources */,
+				93BDCC1E2695F73400FC1D5C /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		93BDCC212695F73400FC1D5C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				93BDCC222695F73400FC1D5C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		93BDCC262695F73700FC1D5C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				93BDCC272695F73700FC1D5C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		93BDCC2A2695F73700FC1D5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		93BDCC2B2695F73700FC1D5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		93BDCC2D2695F73700FC1D5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8682B536FDEE34D6C05BB11 /* Pods-RemoveSmartTV.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7VA7N3EEEN;
+				INFOPLIST_FILE = RemoveSmartTV/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = haiphan.RemoveSmartTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		93BDCC2E2695F73700FC1D5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FC2867FA96AD987083F0DFE /* Pods-RemoveSmartTV.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7VA7N3EEEN;
+				INFOPLIST_FILE = RemoveSmartTV/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = haiphan.RemoveSmartTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		93BDCC132695F73400FC1D5C /* Build configuration list for PBXProject "RemoveSmartTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93BDCC2A2695F73700FC1D5C /* Debug */,
+				93BDCC2B2695F73700FC1D5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93BDCC2C2695F73700FC1D5C /* Build configuration list for PBXNativeTarget "RemoveSmartTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93BDCC2D2695F73700FC1D5C /* Debug */,
+				93BDCC2E2695F73700FC1D5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 93BDCC102695F73400FC1D5C /* Project object */;
+}

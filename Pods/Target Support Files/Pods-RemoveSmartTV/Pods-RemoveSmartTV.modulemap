@@ -1,0 +1,6 @@
+framework module Pods_RemoveSmartTV {
+  umbrella header "Pods-RemoveSmartTV-umbrella.h"
+
+  export *
+  module * { export * }
+}
