@@ -25,6 +25,7 @@ class ViewController: UIViewController {
     // Properties
     private var manager: CBCentralManager!
     private var activePeripheral: CBPeripheral!
+    private var pheripheralManager: CBPeripheralManager!
     @VariableReplay private var peripherals: [CBPeripheral] = []
     private let disposeBag = DisposeBag()
 
@@ -40,6 +41,7 @@ extension ViewController {
     
     private func setupUI() {
         manager = CBCentralManager(delegate: self, queue: nil)
+        pheripheralManager = CBPeripheralManager(delegate: self, queue: nil, options: nil)
         
         self.tableView.register(DiscoverCell.nib, forCellReuseIdentifier: DiscoverCell.identifier)
         self.tableView.delegate = self
@@ -75,6 +77,10 @@ extension ViewController {
         self.manager.stopScan()
     }
     
+    private func disconnect(peripheral: CBPeripheral) {
+        manager.cancelPeripheralConnection(peripheral)
+    }
+    
 }
 extension ViewController: CBPeripheralDelegate, CBCentralManagerDelegate {
     
@@ -93,6 +99,7 @@ extension ViewController: CBPeripheralDelegate, CBCentralManagerDelegate {
         self.activePeripheral = peripheral
         self.activePeripheral.delegate = self
         
+//        Tìm kiếm các service
         peripheral.discoverServices(nil)
         
         self.stopScan()
@@ -101,6 +108,7 @@ extension ViewController: CBPeripheralDelegate, CBCentralManagerDelegate {
     func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
         for service in peripheral.services! {
             print("Discovered service \(service)")
+            //        Tìm kiếm các characteristic
             peripheral.discoverCharacteristics(nil, for: service)
         }
     }
@@ -108,11 +116,46 @@ extension ViewController: CBPeripheralDelegate, CBCentralManagerDelegate {
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
         for characteristic in service.characteristics! {
             print("Discovered characteristic \(characteristic)")
+//            Lấy giá trị của một characteristic
+            peripheral.readValue(for: characteristic)
+            peripheral.setNotifyValue(true, for: characteristic)
+            
+            if let d = characteristic.value {
+                peripheral.writeValue(d, for: characteristic, type: .withResponse)
+            }
         }
+    }
+    
+    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
+        let data = characteristic.value
+        // parse the data as needed
+        print("====== data \(data)")
+        if let d = data {
+            let str = String(decoding: d, as: UTF8.self)
+            print("===== str \(str) ")
+        }
+    }
+    
+    func peripheral(_ peripheral: CBPeripheral, didUpdateNotificationStateFor characteristic: CBCharacteristic, error: Error?) {
+        if let error = error {
+            print("Error changing notification state: \(error.localizedDescription ?? "")")
+        }
+        let data = characteristic.value
+        // parse the data as needed
     }
     
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
         print("Disconnected from the active peripheral Device\n")
+        if(self.activePeripheral != nil) {
+            
+        }
+           
+    }
+    
+    func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: Error?) {
+        if let error = error {
+            print("Error writing characteristic value \(error.localizedDescription)")
+        }
     }
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
@@ -163,6 +206,13 @@ extension ViewController: CBPeripheralDelegate, CBCentralManagerDelegate {
                     }
         
     }
+}
+extension ViewController: CBPeripheralManagerDelegate {
+    func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
+        
+    }
+    
+    
 }
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
