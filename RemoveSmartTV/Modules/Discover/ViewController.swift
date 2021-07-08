@@ -53,11 +53,12 @@ extension ViewController {
         
         self.tableView.rx.itemSelected.bind(onNext: weakify({ index, wSelf in
             let item = wSelf.peripherals[index.row]
-            let vc = RemoteTV.createVC()
-            
-            guard let setupVC = vc as? RemoteTV else { return }
-            setupVC.activePeripheral = item
-            wSelf.navigationController?.pushViewController(vc, animated: true)
+//            let vc = RemoteTV.createVC()
+//
+//            guard let setupVC = vc as? RemoteTV else { return }
+//            setupVC.manageRemoteTV = ManageRemote(activePeripheral: item, manager: self.manager, peripherals: self.peripherals)
+//            wSelf.navigationController?.pushViewController(vc, animated: true)
+            self.connect(peripheral: item)
             
         })).disposed(by: disposeBag)
         
@@ -88,13 +89,34 @@ extension ViewController: CBPeripheralDelegate, CBCentralManagerDelegate {
 //
 //        printf("Connected to active peripheral Device\n");
 //        print("====== peripheral \(peripheral)")
+        
+        self.activePeripheral = peripheral
+        self.activePeripheral.delegate = self
+        
+        peripheral.discoverServices(nil)
+        
         self.stopScan()
     }
     
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
+        for service in peripheral.services! {
+            print("Discovered service \(service)")
+            peripheral.discoverCharacteristics(nil, for: service)
+        }
+    }
+    
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
+        for characteristic in service.characteristics! {
+            print("Discovered characteristic \(characteristic)")
+        }
+    }
+    
+    func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
+        print("Disconnected from the active peripheral Device\n")
+    }
+    
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
-        
-        print("========= didDiscover peripheral \(peripheral.name)")
-        
+       
         // We've found it so stop scan
         //                self.centralManager.stopScan()
         //

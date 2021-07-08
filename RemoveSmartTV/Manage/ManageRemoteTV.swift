@@ -47,6 +47,11 @@ extension ManageRemote: CBPeripheralDelegate, CBCentralManagerDelegate {
 //
 //        printf("Connected to active peripheral Device\n");
 //        print("====== peripheral \(peripheral)")
+        self.activePeripheral = peripheral
+        self.activePeripheral.delegate = self
+        
+        self.activePeripheral.discoverServices(nil)
+        
         self.stopScan()
     }
     

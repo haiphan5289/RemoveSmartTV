@@ -17,16 +17,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="r7l-qy-OZY">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="244" width="414" height="618"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HEa-ny-bgt">
+                                <rect key="frame" x="50" y="94" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="LY2-Dt-dhG"/>
+                                    <constraint firstAttribute="width" constant="50" id="aSY-tE-e7z"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="r7l-qy-OZY" secondAttribute="bottom" id="0Yk-ln-SgP"/>
+                            <constraint firstItem="HEa-ny-bgt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="6Ya-ZX-pki"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="r7l-qy-OZY" secondAttribute="trailing" id="P94-LH-51H"/>
-                            <constraint firstItem="r7l-qy-OZY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="mJo-yk-sgB"/>
+                            <constraint firstItem="r7l-qy-OZY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="mJo-yk-sgB"/>
+                            <constraint firstItem="HEa-ny-bgt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="q3s-Gr-uEZ"/>
                             <constraint firstItem="r7l-qy-OZY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qec-SF-xFd"/>
                         </constraints>
                     </view>
