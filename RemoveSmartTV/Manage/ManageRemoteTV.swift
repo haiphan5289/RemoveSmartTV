@@ -1,24 +1,40 @@
 //
-//  ViewController.swift
+//  ManageRemoteTV.swift
 //  RemoveSmartTV
 //
-//  Created by haiphan on 07/07/2021.
+//  Created by haiphan on 08/07/2021.
 //
 
-import UIKit
-import CoreBluetooth
-import RxCocoa
+import Foundation
 import RxSwift
+import RxCocoa
+import CoreBluetooth
 
-protocol BTSmartSensorDelegate {
-    func peripheralFound()
-    func TAHbleCharValueUpdated()
-    func setConnect()
-    func setDisconnect()
+final class ManageRemote: NSObject {
+    var activePeripheral: CBPeripheral!
+    var manager: CBCentralManager!
+    var peripherals: [CBPeripheral] = []
+    
+    init(activePeripheral: CBPeripheral, manager: CBCentralManager, peripherals: [CBPeripheral]) {
+        self.activePeripheral = activePeripheral
+        self.manager = manager
+        self.peripherals = peripherals
+    }
+    
+    func connect(peripheral: CBPeripheral) {
+        
+        if peripheral.state != .connected {
+            self.manager.connect(peripheral, options: nil)
+        }
+    }
+    
+    private func stopScan() {
+        self.manager.stopScan()
+    }
+    
+    
 }
-
-
-class ViewController: UIViewController, CBPeripheralDelegate, CBCentralManagerDelegate {
+extension ManageRemote: CBPeripheralDelegate, CBCentralManagerDelegate {
     
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
 //        activePeripheral = peripheral;
@@ -30,13 +46,13 @@ class ViewController: UIViewController, CBPeripheralDelegate, CBCentralManagerDe
 //        [self printPeripheralInfo:peripheral];
 //
 //        printf("Connected to active peripheral Device\n");
-        print("====== peripheral \(peripheral)")
+//        print("====== peripheral \(peripheral)")
         self.stopScan()
     }
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         
-        print("========= didDiscover peripheral")
+        print("========= didDiscover peripheral \(peripheral.name)")
         
         // We've found it so stop scan
         //                self.centralManager.stopScan()
@@ -60,14 +76,14 @@ class ViewController: UIViewController, CBPeripheralDelegate, CBCentralManagerDe
         
 //        self.manager.stopScan()
         
-        if let f = peripherals.first {
-            // Copy the peripheral instance
-                        self.activePeripheral = f
-                        self.activePeripheral.delegate = self
-
-                        // Connect!
-                        self.manager.connect(self.activePeripheral, options: nil)
-        }
+//        if let f = peripherals.first {
+//            // Copy the peripheral instance
+//                        self.activePeripheral = f
+//                        self.activePeripheral.delegate = self
+//
+//                        // Connect!
+//                        self.manager.connect(self.activePeripheral, options: nil)
+//        }
 
     }
     
@@ -84,43 +100,4 @@ class ViewController: UIViewController, CBPeripheralDelegate, CBCentralManagerDe
                     }
         
     }
-    
-    var delegate: BTSmartSensorDelegate?
-    // Properties
-    private var manager: CBCentralManager!
-    private var activePeripheral: CBPeripheral!
-    @VariableReplay private var peripherals: [CBPeripheral] = []
-    private let disposeBag = DisposeBag()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-        manager = CBCentralManager(delegate: self, queue: nil)
-        
-        self.$peripherals.asObservable()
-            .debounce(.seconds(1), scheduler: MainScheduler.asyncInstance)
-            .bind { list in
-                
-                if let f = list.first {
-                    self.connect(peripheral: f)
-                }
-                
-        }.disposed(by: disposeBag)
-        
-    }
-    
-    private func connect(peripheral: CBPeripheral) {
-        
-        if peripheral.state != .connected {
-            self.manager.connect(peripheral, options: nil)
-        }
-    }
-    
-    private func stopScan() {
-        self.manager.stopScan()
-    }
-
-
 }
-

@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		466AD66A983A573C5047F6DA /* Pods_RemoveSmartTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 053245E32542D7F7886E7BFA /* Pods_RemoveSmartTV.framework */; };
+		9392A3252697257000766B6C /* DiscoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9392A3232697257000766B6C /* DiscoverCell.swift */; };
+		9392A3262697257000766B6C /* DiscoverCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9392A3242697257000766B6C /* DiscoverCell.xib */; };
+		9392A328269725A300766B6C /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9392A327269725A300766B6C /* ViewExtension.swift */; };
+		9392A32B269727C400766B6C /* RemoteTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9392A329269727C400766B6C /* RemoteTV.swift */; };
+		9392A32C269727C400766B6C /* RemoteTV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9392A32A269727C400766B6C /* RemoteTV.xib */; };
+		9392A32E269728BD00766B6C /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9392A32D269728BD00766B6C /* ViewControllerExtension.swift */; };
+		9392A33126972D0100766B6C /* ManageRemoteTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9392A33026972D0100766B6C /* ManageRemoteTV.swift */; };
 		93BDCC1C2695F73400FC1D5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCC1B2695F73400FC1D5C /* AppDelegate.swift */; };
 		93BDCC1E2695F73400FC1D5C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCC1D2695F73400FC1D5C /* SceneDelegate.swift */; };
 		93BDCC202695F73400FC1D5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCC1F2695F73400FC1D5C /* ViewController.swift */; };
@@ -21,6 +28,13 @@
 /* Begin PBXFileReference section */
 		053245E32542D7F7886E7BFA /* Pods_RemoveSmartTV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RemoveSmartTV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FC2867FA96AD987083F0DFE /* Pods-RemoveSmartTV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemoveSmartTV.release.xcconfig"; path = "Target Support Files/Pods-RemoveSmartTV/Pods-RemoveSmartTV.release.xcconfig"; sourceTree = "<group>"; };
+		9392A3232697257000766B6C /* DiscoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverCell.swift; sourceTree = "<group>"; };
+		9392A3242697257000766B6C /* DiscoverCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscoverCell.xib; sourceTree = "<group>"; };
+		9392A327269725A300766B6C /* ViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		9392A329269727C400766B6C /* RemoteTV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteTV.swift; sourceTree = "<group>"; };
+		9392A32A269727C400766B6C /* RemoteTV.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemoteTV.xib; sourceTree = "<group>"; };
+		9392A32D269728BD00766B6C /* ViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		9392A33026972D0100766B6C /* ManageRemoteTV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageRemoteTV.swift; sourceTree = "<group>"; };
 		93BDCC182695F73400FC1D5C /* RemoveSmartTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemoveSmartTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93BDCC1B2695F73400FC1D5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93BDCC1D2695F73400FC1D5C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +77,51 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9392A31F2697235C00766B6C /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				9392A3212697254900766B6C /* Discover */,
+				9392A3202697236A00766B6C /* RemoteTV */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		9392A3202697236A00766B6C /* RemoteTV */ = {
+			isa = PBXGroup;
+			children = (
+				9392A329269727C400766B6C /* RemoteTV.swift */,
+				9392A32A269727C400766B6C /* RemoteTV.xib */,
+			);
+			path = RemoteTV;
+			sourceTree = "<group>";
+		};
+		9392A3212697254900766B6C /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				9392A3222697255800766B6C /* Cell */,
+				93BDCC1F2695F73400FC1D5C /* ViewController.swift */,
+				93BDCC212695F73400FC1D5C /* Main.storyboard */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		9392A3222697255800766B6C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9392A3232697257000766B6C /* DiscoverCell.swift */,
+				9392A3242697257000766B6C /* DiscoverCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		9392A32F26972CE600766B6C /* Manage */ = {
+			isa = PBXGroup;
+			children = (
+				9392A33026972D0100766B6C /* ManageRemoteTV.swift */,
+			);
+			path = Manage;
+			sourceTree = "<group>";
+		};
 		93BDCC0F2695F73400FC1D5C = {
 			isa = PBXGroup;
 			children = (
@@ -86,10 +145,10 @@
 			children = (
 				93BDCC322696036900FC1D5C /* Extension */,
 				93BDCC2F2695F7FF00FC1D5C /* Tah Library */,
+				9392A32F26972CE600766B6C /* Manage */,
+				9392A31F2697235C00766B6C /* Modules */,
 				93BDCC1B2695F73400FC1D5C /* AppDelegate.swift */,
 				93BDCC1D2695F73400FC1D5C /* SceneDelegate.swift */,
-				93BDCC1F2695F73400FC1D5C /* ViewController.swift */,
-				93BDCC212695F73400FC1D5C /* Main.storyboard */,
 				93BDCC242695F73700FC1D5C /* Assets.xcassets */,
 				93BDCC262695F73700FC1D5C /* LaunchScreen.storyboard */,
 				93BDCC292695F73700FC1D5C /* Info.plist */,
@@ -109,6 +168,8 @@
 			isa = PBXGroup;
 			children = (
 				93BDCC332696038100FC1D5C /* PropertyWapper.swift */,
+				9392A327269725A300766B6C /* ViewExtension.swift */,
+				9392A32D269728BD00766B6C /* ViewControllerExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -172,9 +233,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9392A3262697257000766B6C /* DiscoverCell.xib in Resources */,
 				93BDCC282695F73700FC1D5C /* LaunchScreen.storyboard in Resources */,
 				93BDCC252695F73700FC1D5C /* Assets.xcassets in Resources */,
 				93BDCC232695F73400FC1D5C /* Main.storyboard in Resources */,
+				9392A32C269727C400766B6C /* RemoteTV.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,11 +290,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9392A33126972D0100766B6C /* ManageRemoteTV.swift in Sources */,
 				93BDCC202695F73400FC1D5C /* ViewController.swift in Sources */,
 				93BDCC342696038100FC1D5C /* PropertyWapper.swift in Sources */,
+				9392A32E269728BD00766B6C /* ViewControllerExtension.swift in Sources */,
 				93BDCC312695F81400FC1D5C /* TahLibrary.swift in Sources */,
+				9392A328269725A300766B6C /* ViewExtension.swift in Sources */,
 				93BDCC1C2695F73400FC1D5C /* AppDelegate.swift in Sources */,
+				9392A3252697257000766B6C /* DiscoverCell.swift in Sources */,
 				93BDCC1E2695F73400FC1D5C /* SceneDelegate.swift in Sources */,
+				9392A32B269727C400766B6C /* RemoteTV.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
