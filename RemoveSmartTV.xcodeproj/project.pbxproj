@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,9 @@
 		9392A32C269727C400766B6C /* RemoteTV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9392A32A269727C400766B6C /* RemoteTV.xib */; };
 		9392A32E269728BD00766B6C /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9392A32D269728BD00766B6C /* ViewControllerExtension.swift */; };
 		9392A33126972D0100766B6C /* ManageRemoteTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9392A33026972D0100766B6C /* ManageRemoteTV.swift */; };
+		93BAAD24269C90630085B638 /* CheckBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BAAD23269C90630085B638 /* CheckBC.swift */; };
+		93BAAD27269C9D7D0085B638 /* SwiftyTeeth in Frameworks */ = {isa = PBXBuildFile; productRef = 93BAAD26269C9D7D0085B638 /* SwiftyTeeth */; };
+		93BAAD29269C9D7D0085B638 /* SwiftyTooth in Frameworks */ = {isa = PBXBuildFile; productRef = 93BAAD28269C9D7D0085B638 /* SwiftyTooth */; };
 		93BDCC1C2695F73400FC1D5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCC1B2695F73400FC1D5C /* AppDelegate.swift */; };
 		93BDCC1E2695F73400FC1D5C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCC1D2695F73400FC1D5C /* SceneDelegate.swift */; };
 		93BDCC202695F73400FC1D5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93BDCC1F2695F73400FC1D5C /* ViewController.swift */; };
@@ -35,6 +38,7 @@
 		9392A32A269727C400766B6C /* RemoteTV.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemoteTV.xib; sourceTree = "<group>"; };
 		9392A32D269728BD00766B6C /* ViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		9392A33026972D0100766B6C /* ManageRemoteTV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageRemoteTV.swift; sourceTree = "<group>"; };
+		93BAAD23269C90630085B638 /* CheckBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBC.swift; sourceTree = "<group>"; };
 		93BDCC182695F73400FC1D5C /* RemoveSmartTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemoveSmartTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93BDCC1B2695F73400FC1D5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93BDCC1D2695F73400FC1D5C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +58,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				466AD66A983A573C5047F6DA /* Pods_RemoveSmartTV.framework in Frameworks */,
+				93BAAD29269C9D7D0085B638 /* SwiftyTooth in Frameworks */,
+				93BAAD27269C9D7D0085B638 /* SwiftyTeeth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +86,7 @@
 		9392A31F2697235C00766B6C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				93BAAD22269C904F0085B638 /* Check */,
 				9392A3212697254900766B6C /* Discover */,
 				9392A3202697236A00766B6C /* RemoteTV */,
 			);
@@ -120,6 +127,14 @@
 				9392A33026972D0100766B6C /* ManageRemoteTV.swift */,
 			);
 			path = Manage;
+			sourceTree = "<group>";
+		};
+		93BAAD22269C904F0085B638 /* Check */ = {
+			isa = PBXGroup;
+			children = (
+				93BAAD23269C90630085B638 /* CheckBC.swift */,
+			);
+			path = Check;
 			sourceTree = "<group>";
 		};
 		93BDCC0F2695F73400FC1D5C = {
@@ -192,6 +207,10 @@
 			dependencies = (
 			);
 			name = RemoveSmartTV;
+			packageProductDependencies = (
+				93BAAD26269C9D7D0085B638 /* SwiftyTeeth */,
+				93BAAD28269C9D7D0085B638 /* SwiftyTooth */,
+			);
 			productName = RemoveSmartTV;
 			productReference = 93BDCC182695F73400FC1D5C /* RemoveSmartTV.app */;
 			productType = "com.apple.product-type.application";
@@ -219,6 +238,9 @@
 				Base,
 			);
 			mainGroup = 93BDCC0F2695F73400FC1D5C;
+			packageReferences = (
+				93BAAD25269C9D7D0085B638 /* XCRemoteSwiftPackageReference "SwiftyTeeth" */,
+			);
 			productRefGroup = 93BDCC192695F73400FC1D5C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -295,6 +317,7 @@
 				93BDCC342696038100FC1D5C /* PropertyWapper.swift in Sources */,
 				9392A32E269728BD00766B6C /* ViewControllerExtension.swift in Sources */,
 				93BDCC312695F81400FC1D5C /* TahLibrary.swift in Sources */,
+				93BAAD24269C90630085B638 /* CheckBC.swift in Sources */,
 				9392A328269725A300766B6C /* ViewExtension.swift in Sources */,
 				93BDCC1C2695F73400FC1D5C /* AppDelegate.swift in Sources */,
 				9392A3252697257000766B6C /* DiscoverCell.swift in Sources */,
@@ -505,6 +528,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		93BAAD25269C9D7D0085B638 /* XCRemoteSwiftPackageReference "SwiftyTeeth" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RobotPajamas/SwiftyTeeth.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.7.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		93BAAD26269C9D7D0085B638 /* SwiftyTeeth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 93BAAD25269C9D7D0085B638 /* XCRemoteSwiftPackageReference "SwiftyTeeth" */;
+			productName = SwiftyTeeth;
+		};
+		93BAAD28269C9D7D0085B638 /* SwiftyTooth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 93BAAD25269C9D7D0085B638 /* XCRemoteSwiftPackageReference "SwiftyTeeth" */;
+			productName = SwiftyTooth;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 93BDCC102695F73400FC1D5C /* Project object */;
 }

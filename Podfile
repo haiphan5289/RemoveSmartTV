@@ -15,6 +15,9 @@ pod 'RxCocoa'
 pod 'Kingfisher', '~> 5.12.0'
 pod 'SwiftyJSON'
 pod 'SwiftSoup'
-
+pod 'SwiftyBluetooth', '~> 2.1.0'
+#pod 'SwiftyTeeth'
+pod 'SwiftyTeeth', :git => 'https://github.com/RobotPajamas/SwiftyTeeth.git', :branch => 'master'
+pod 'BluetoothKit'
 
 end

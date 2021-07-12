@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SwiftyTeeth",
+        "repositoryURL": "https://github.com/RobotPajamas/SwiftyTeeth.git",
+        "state": {
+          "branch": null,
+          "revision": "16e8020ba39a59a35c51a9546a3ba72078284490",
+          "version": "0.7.2"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

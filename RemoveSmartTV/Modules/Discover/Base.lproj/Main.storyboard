@@ -48,6 +48,36 @@
             </objects>
             <point key="canvasLocation" x="132" y="54"/>
         </scene>
+        <!--CheckBC-->
+        <scene sceneID="9ct-gf-ok3">
+            <objects>
+                <viewController storyboardIdentifier="CheckBC" id="wg5-Vy-dtf" customClass="CheckBC" customModule="RemoveSmartTV" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fTx-tU-XxO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="vNM-fO-viH">
+                                <rect key="frame" x="0.0" y="274" width="414" height="622"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="69L-Za-8xB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="69L-Za-8xB" firstAttribute="trailing" secondItem="vNM-fO-viH" secondAttribute="trailing" id="20h-0C-0MR"/>
+                            <constraint firstItem="vNM-fO-viH" firstAttribute="leading" secondItem="fTx-tU-XxO" secondAttribute="leading" id="YSL-ND-FIh"/>
+                            <constraint firstAttribute="bottom" secondItem="vNM-fO-viH" secondAttribute="bottom" id="fEl-Zu-daA"/>
+                            <constraint firstItem="vNM-fO-viH" firstAttribute="top" secondItem="69L-Za-8xB" secondAttribute="top" constant="230" id="yS3-s7-R15"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="vNM-fO-viH" id="AfK-DV-Qqq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eAn-r0-ZjJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="959" y="30"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
