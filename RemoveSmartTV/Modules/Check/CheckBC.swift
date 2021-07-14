@@ -9,8 +9,8 @@ import UIKit
 import CoreBluetooth
 import RxCocoa
 import RxSwift
-import SwiftyBluetooth
-import BluetoothKit
+//import SwiftyBluetooth
+//import BluetoothKit
 
 
 class CheckBC: UIViewController {
@@ -19,7 +19,7 @@ class CheckBC: UIViewController {
     private var manager: CBCentralManager!
     private var peripheral: CBPeripheral!
     private var pheripheralManager: CBPeripheralManager!
-    @VariableReplay private var peripherals: [Peripheral] = []
+//    @VariableReplay private var peripherals: [Peripheral] = []
     let myCustomServiceUUID = CBUUID(string: "47DFC6AB-D093-468B-9FAB-9396B57D31F0")
     var list: [CBMutableCharacteristic] = []
     var listService: [CBMutableService] = []
@@ -70,85 +70,85 @@ extension CheckBC {
     
     private func setupRX() {
         
-        let peripheral = BKPeripheral()
-        peripheral.delegate = self
-        do {
-            let serviceUUID = NSUUID(UUIDString: "6E6B5C64-FAF7-40AE-9C21-D4933AF45B23")!
-            let characteristicUUID = NSUUID(UUIDString: "477A2967-1FAB-4DC5-920A-DEE5DE685A3D")!
-            let localName = "My Cool Peripheral"
-            let configuration = BKPeripheralConfiguration(dataServiceUUID: serviceUUID, dataServiceCharacteristicUUID:     characteristicUUID, localName: localName)
-            try peripheral.startWithConfiguration(configuration)
-            // You are now ready for incoming connections
-        } catch let error {
-            // Handle error.
-        }
-        
-        
-        self.$peripherals.asObservable()
-            .bind(to: tableView.rx.items(cellIdentifier: DiscoverCell.identifier, cellType: DiscoverCell.self)) {(row, element, cell) in
-                cell.textLabel?.text = element.name
-            }.disposed(by: disposeBag)
-        
-        self.tableView.rx.itemSelected.bind(onNext: weakify({ index, wSelf in
-            let item = wSelf.peripherals[index.row]
-//            let vc = RemoteTV.createVC()
+//        let peripheral = BKPeripheral()
+//        peripheral.delegate = self
+//        do {
+//            let serviceUUID = NSUUID(UUIDString: "6E6B5C64-FAF7-40AE-9C21-D4933AF45B23")!
+//            let characteristicUUID = NSUUID(UUIDString: "477A2967-1FAB-4DC5-920A-DEE5DE685A3D")!
+//            let localName = "My Cool Peripheral"
+//            let configuration = BKPeripheralConfiguration(dataServiceUUID: serviceUUID, dataServiceCharacteristicUUID:     characteristicUUID, localName: localName)
+//            try peripheral.startWithConfiguration(configuration)
+//            // You are now ready for incoming connections
+//        } catch let error {
+//            // Handle error.
+//        }
 //
-//            guard let setupVC = vc as? RemoteTV else { return }
-//            setupVC.manageRemoteTV = ManageRemote(activePeripheral: item, manager: self.manager, peripherals: self.peripherals)
-//            wSelf.navigationController?.pushViewController(vc, animated: true)
-//            self.peripheral = item
-//            self.connect(peripheral: item)
-//            item.connect(withTimeout: 10) { result in
-//                switch result {
-//                case .failure(let err):
-//                    print("===== connect errr \(err.localizedDescription)")
-//                case .success(_):
-//                    print("===== connect success")
-//                    break
-//                }
-//            }
-            
-//            print("==== \(item.services.map{ $0 })")
-            
-//            item.readValue(ofCharac: item.services) { result in
 //
-//            }
-            
-//            item.discoverServices(withUUIDs: nil) { result in
-//                switch result {
-//                case .success(let services):
-//                    print("services \(services)")
-//                    break // An array containing all the services requested
-//                case .failure(let error):
-//                    print("==== error \(error)")
-//                    break // A connection error or an array containing the UUIDs of the services that we're not found
-//                }
-//            }
-            
-//            item.discoverCharacteristics(withUUIDs: nil, ofServiceWithUUID: "180A") { result in
-//                // The characteristics discovered or an error if something went wrong.
-//                switch result {
-//                case .success(let services):
-//                    print("services \(services)")
-//                    break // An array containing all the services requested
-//                case .failure(let error):
-//                    print("==== error \(error)")
-//                    break // A connection error or an array containing the UUIDs of the services that we're not found
-//                }
-//            }
-            
-//            item.readValue(ofCharacWithUUID: "2A29", fromServiceWithUUID: "180A") { result in
-//                switch result {
-//                case .success(let data):
-//                    print("==== data \(data)")
-//                    break // The data was read and is returned as an NSData instance
-//                case .failure(let error):
-//                    print("==== error \(error)")
-//                    break // An error happened while attempting to read the data
-//                }
-//            }
-            
-        })).disposed(by: disposeBag)
+//        self.$peripherals.asObservable()
+//            .bind(to: tableView.rx.items(cellIdentifier: DiscoverCell.identifier, cellType: DiscoverCell.self)) {(row, element, cell) in
+//                cell.textLabel?.text = element.name
+//            }.disposed(by: disposeBag)
+//
+//        self.tableView.rx.itemSelected.bind(onNext: weakify({ index, wSelf in
+//            let item = wSelf.peripherals[index.row]
+////            let vc = RemoteTV.createVC()
+////
+////            guard let setupVC = vc as? RemoteTV else { return }
+////            setupVC.manageRemoteTV = ManageRemote(activePeripheral: item, manager: self.manager, peripherals: self.peripherals)
+////            wSelf.navigationController?.pushViewController(vc, animated: true)
+////            self.peripheral = item
+////            self.connect(peripheral: item)
+////            item.connect(withTimeout: 10) { result in
+////                switch result {
+////                case .failure(let err):
+////                    print("===== connect errr \(err.localizedDescription)")
+////                case .success(_):
+////                    print("===== connect success")
+////                    break
+////                }
+////            }
+//
+////            print("==== \(item.services.map{ $0 })")
+//
+////            item.readValue(ofCharac: item.services) { result in
+////
+////            }
+//
+////            item.discoverServices(withUUIDs: nil) { result in
+////                switch result {
+////                case .success(let services):
+////                    print("services \(services)")
+////                    break // An array containing all the services requested
+////                case .failure(let error):
+////                    print("==== error \(error)")
+////                    break // A connection error or an array containing the UUIDs of the services that we're not found
+////                }
+////            }
+//
+////            item.discoverCharacteristics(withUUIDs: nil, ofServiceWithUUID: "180A") { result in
+////                // The characteristics discovered or an error if something went wrong.
+////                switch result {
+////                case .success(let services):
+////                    print("services \(services)")
+////                    break // An array containing all the services requested
+////                case .failure(let error):
+////                    print("==== error \(error)")
+////                    break // A connection error or an array containing the UUIDs of the services that we're not found
+////                }
+////            }
+//
+////            item.readValue(ofCharacWithUUID: "2A29", fromServiceWithUUID: "180A") { result in
+////                switch result {
+////                case .success(let data):
+////                    print("==== data \(data)")
+////                    break // The data was read and is returned as an NSData instance
+////                case .failure(let error):
+////                    print("==== error \(error)")
+////                    break // An error happened while attempting to read the data
+////                }
+////            }
+//
+//        })).disposed(by: disposeBag)
         
     }
     

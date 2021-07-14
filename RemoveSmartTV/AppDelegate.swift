@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         window = UIWindow.init(frame: UIScreen.main.bounds)
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier:"CheckBC") as! CheckBC
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier:"ViewController") as! ViewController
         let navi: UINavigationController = UINavigationController(rootViewController: vc)
         window?.rootViewController = navi
         window?.makeKeyAndVisible()
