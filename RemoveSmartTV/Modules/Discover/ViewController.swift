@@ -99,6 +99,30 @@ extension ViewController {
         manager.cancelPeripheralConnection(peripheral)
     }
     
+//    -(void) getAllCharacteristicsFromKeyfob:(CBPeripheral *)p{
+//        for (int i=0; i < p.services.count; i++) {
+//            CBService *s = [p.services objectAtIndex:i];
+//            printf("Fetching characteristics for service with UUID : %s\r\n",[self CBUUIDToString:s.UUID]);
+//            [p discoverCharacteristics:nil forService:s];
+//        }
+//    }
+    
+    private func getAllCharacteristicsFromKeyfob(p: CBPeripheral) {
+        guard let services = p.services else { return }
+        
+        for service in services {
+            print("Fetching characteristics for service with UUID \(self.CBUUIDToString(UUID: service.uuid)) ")
+            p.discoverCharacteristics(nil, for: service)
+        }
+        
+    }
+    
+    private func CBUUIDToString(UUID: CBUUID) -> [CChar]? {
+        let d = UUID.data.description.cString(using: .nonLossyASCII)
+        return d
+    }
+    
+    
 }
 extension ViewController: CBPeripheralDelegate, CBCentralManagerDelegate {
     
@@ -139,6 +163,7 @@ extension ViewController: CBPeripheralDelegate, CBCentralManagerDelegate {
       
       for service in services {
         print(service)
+        self.getAllCharacteristicsFromKeyfob(p: peripheral)
         peripheral.discoverCharacteristics(nil, for: service)
       }
     }
@@ -157,18 +182,49 @@ extension ViewController: CBPeripheralDelegate, CBCentralManagerDelegate {
           print("\(characteristic.uuid): properties contains .notify")
           peripheral.setNotifyValue(true, for: characteristic)
         }
+        if characteristic.properties.contains(.write) {
+          print("\(characteristic.uuid): properties contains .notify")
+          peripheral.setNotifyValue(true, for: characteristic)
+        }
       }
+        
+//        if (!error) {
+//            printf("Characteristics of service with UUID : %s found\r\n",[self CBUUIDToString:service.UUID]);
+//            for(int i = 0; i < service.characteristics.count; i++) { //Show every one
+//                CBCharacteristic *c = [service.characteristics objectAtIndex:i];
+//                printf("Found characteristic %s\r\n",[ self CBUUIDToString:c.UUID]);
+//            }
+//
+//            char t[16];
+//            t[0] = (SERVICE_UUID >> 8) & 0xFF;
+//            t[1] = SERVICE_UUID & 0xFF;
+//            NSData *data = [[NSData alloc] initWithBytes:t length:16];
+//            CBUUID *uuid = [CBUUID UUIDWithData:data];
+//            //CBService *s = [peripheral.services objectAtIndex:(peripheral.services.count - 1)];
+//            if([self compareCBUUID:service.UUID UUID2:uuid]) {
+//                printf("Try to open notify\n");
+//                [self notify:peripheral on:YES];
+//            }
+//        }
+//        else {
+//            printf("Characteristic discorvery unsuccessfull !\r\n");
+//        }
+        
+        for characteristic in characteristics {
+            print("Found characteristic %s \(self.CBUUIDToString(UUID: characteristic.uuid)) ");
+        }
     }
     
+
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic,
                     error: Error?) {
-  //    switch characteristic.uuid {
-  //    case bodySensorLocationCharacteristicCBUUID:
-  //      let bpm = heartRate(from: characteristic)
-  //      print("")
-  //      default:
-  //        print("Unhandled Characteristic UUID: \(characteristic.uuid)")
-  //    }
+      switch characteristic.uuid {
+      case bodySensorLocationCharacteristicCBUUID:
+        let bpm = heartRate(from: characteristic)
+        print("")
+        default:
+          print("Unhandled Characteristic UUID: \(characteristic.uuid)")
+      }
     }
     
     private func heartRate(from characteristic: CBCharacteristic) -> Int {
